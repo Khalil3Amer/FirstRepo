@@ -1,1 +1,1 @@
-# Object Orinted Using Python.
+# Object Oriented Using Python.
