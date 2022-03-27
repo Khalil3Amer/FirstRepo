@@ -60,6 +60,7 @@ class HourlyEmployee(Empolyee):
         if re.search("^(0?[1-9]||3[01]||[12][0-9])-(0?[1-9]||1[0-2])-[0-9][0-9][0-9][0-9]$",date)==None:
             return False
         self.__hours[date]=hours
+        return True
     def setPerHour(self,perHour):
         self.__perHour=perHour
     def getPerHour(self):
