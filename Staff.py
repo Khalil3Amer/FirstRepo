@@ -29,4 +29,6 @@ class Staff(Person):
         self.__postion=positon
     def setSuperVisor(self,superVisor) -> None:
         self.__superVisor=superVisor
+    def __str__(self) -> str:
+        return super().__str__() + f', EmployeeId = {self.__empId}, Salary = {self.__salary}'
     

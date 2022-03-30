@@ -28,5 +28,7 @@ class Student(Person):
         self.__courses=courses
     def addCourse(self,course) -> None:
         self.__courses.append(course)
+    def __str__(self) -> str:
+        return super().__str__() + f', StudentId = {self.__studentId}, GPA = {self.__GPA}, Courses = {self.__courses}'
     
     

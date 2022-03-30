@@ -19,4 +19,6 @@ class Instructor(Staff):
         self.__major=major
     def setDegree(self,degree) -> None:
         self.__degree=degree
+    def __str__(self) -> str:
+        return super().__str__() + f', Major = {self.__major}, Degree = {self.__degree}'
     
