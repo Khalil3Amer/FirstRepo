@@ -10,15 +10,15 @@ Notice that you may not slant the container.
 
 
 class Solution:
-    def maxArea(self,height) -> int:
-        maxA=0
-        i=0
-        j=len(height)-1
-        while i<j:
-            currentA=min(height[i],height[j])*(j-i)
-            maxA=max(currentA,maxA)
-            if height[i]<height[j]:
-                i+=1
+    def maxArea(self, height) -> int:
+        maxA = 0
+        i = 0
+        j = len(height) - 1
+        while i < j:
+            currentA = min(height[i], height[j]) * (j - i)
+            maxA = max(currentA, maxA)
+            if height[i] < height[j]:
+                i += 1
             else:
-                j-=1
+                j -= 1
         return maxA

@@ -22,24 +22,25 @@ Input: nums = [0,0,1,1,1,1,2,3,3]
 Output: 7, nums = [0,0,1,1,2,3,3,_,_]
 Explanation: Your function should return k = 7, with the first seven elements of nums being 0, 0, 1, 1, 2, 3 and 3 respectively.
 It does not matter what you leave beyond the returned k (hence they are underscores).
- 
+
 
 """
+
+
 class Solution:
     def removeDuplicates(self, nums) -> int:
-        isTwice=False
-        removedCount=0
-        size=len(nums)
-        for i in range(1,size):
-            i=i-removedCount
-            if i==size-removedCount:
+        isTwice = False
+        removedCount = 0
+        size = len(nums)
+        for i in range(1, size):
+            i = i - removedCount
+            if i == size - removedCount:
                 break
-            if nums[i]==nums[i-1] and not isTwice:
-                isTwice=True
-            elif nums[i]==nums[i-1]:
+            if nums[i] == nums[i - 1] and not isTwice:
+                isTwice = True
+            elif nums[i] == nums[i - 1]:
                 nums.pop(i)
-                removedCount+=1
+                removedCount += 1
             else:
-                isTwice=False
-        return size-removedCount
-                
+                isTwice = False
+        return size - removedCount
