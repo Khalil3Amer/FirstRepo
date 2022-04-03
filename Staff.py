@@ -9,7 +9,19 @@ class Staff(Person):
     __superVisor = None
     # Public
 
-    def __init__(self, id, name, bd, email, address, department, empId, salary, postion, superVisor) -> None:
+    def __init__(
+        self,
+        id,
+        name,
+        bd,
+        email,
+        address,
+        department,
+        empId,
+        salary,
+        postion,
+        superVisor,
+    ) -> None:
         super().__init__(id, name, bd, email, address, department)
         self.__empId = empId
         self.__salary = salary
@@ -41,4 +53,7 @@ class Staff(Person):
         self.__superVisor = superVisor
 
     def __str__(self) -> str:
-        return super().__str__() + f', EmployeeId = {self.__empId}, Salary = {self.__salary}'
+        return (
+            super().__str__()
+            + f", EmployeeId = {self.__empId}, Salary = {self.__salary}"
+        )

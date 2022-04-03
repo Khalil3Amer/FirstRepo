@@ -29,4 +29,4 @@ class Department:
         self.__departmentId = id
 
     def __str__(self) -> str:
-        return f', DepartmentID = {self.__departmentId}, Name = {self.__name} , Manger = {self.__manger}'
+        return f", DepartmentID = {self.__departmentId}, Name = {self.__name} , Manger = {self.__manger}"

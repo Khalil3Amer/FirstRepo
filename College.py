@@ -15,8 +15,19 @@ def main():
     x = open("Data/Students.txt")
     for line in x:
         line = line.split(" ")
-        students.append(Student(line[0], line[1], line[2], line[3], line[4], None, line[5], float(
-            line[6]), line[7].strip().split(",")))
+        students.append(
+            Student(
+                line[0],
+                line[1],
+                line[2],
+                line[3],
+                line[4],
+                None,
+                line[5],
+                float(line[6]),
+                line[7].strip().split(","),
+            )
+        )
     students[0].setDepartment(departments[0])
     students[1].setDepartment(departments[1])
     x.close()
@@ -25,8 +36,22 @@ def main():
     x = open("Data/Instructors.txt")
     for line in x:
         line = line.split(" ")
-        instructors.append(Instructor(line[0], line[1], line[2], line[3], line[4], None, line[5], float(
-            line[6]), line[7], None, line[8], line[9]))
+        instructors.append(
+            Instructor(
+                line[0],
+                line[1],
+                line[2],
+                line[3],
+                line[4],
+                None,
+                line[5],
+                float(line[6]),
+                line[7],
+                None,
+                line[8],
+                line[9],
+            )
+        )
     x.close()
 
     print("*********** instructors ***************")
@@ -42,5 +67,5 @@ def main():
         print(i)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

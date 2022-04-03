@@ -8,7 +8,9 @@ class Student(Person):
     __courses = []
     # Public
 
-    def __init__(self, id, name, bd, email, address, department, studentId, GPA, courses) -> None:
+    def __init__(
+        self, id, name, bd, email, address, department, studentId, GPA, courses
+    ) -> None:
         super().__init__(id, name, bd, email, address, department)
         self.__studentId = studentId
         self.__GPA = GPA
@@ -39,4 +41,7 @@ class Student(Person):
         self.__courses.append(course)
 
     def __str__(self) -> str:
-        return super().__str__() + f', StudentId = {self.__studentId}, GPA = {self.__GPA}, Courses = {self.__courses}'
+        return (
+            super().__str__()
+            + f", StudentId = {self.__studentId}, GPA = {self.__GPA}, Courses = {self.__courses}"
+        )

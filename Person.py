@@ -61,4 +61,4 @@ class Person(ABC):
         return self.__department
 
     def __str__(self) -> str:
-        return f'Id = {self.__id}, Name = {self.__name}, BirthDate = {self.__bd}, Email = {self.__email}, Address = {self.__address}, Department = {self.__department}'
+        return f"Id = {self.__id}, Name = {self.__name}, BirthDate = {self.__bd}, Email = {self.__email}, Address = {self.__address}, Department = {self.__department}"
