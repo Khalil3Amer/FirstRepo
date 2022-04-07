@@ -1,6 +1,6 @@
+import re
 from abc import ABC
 from abc import abstractmethod
-import re
 
 
 class Empolyee(ABC):
@@ -89,7 +89,9 @@ class HourlyEmployee(Empolyee):
     def getPerHour(self):
         return self.__perHour
 
-    def clearHours(self):  # when the employee gets paid the work history gets cleard
+    def clearHours(
+        self,
+    ):  # when the employee gets paid the work history gets cleard
         self.__hours.clear()
 
 
