@@ -1,16 +1,17 @@
 import re
-from abc import ABC
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 
 
 class Empolyee(ABC):
     # Protected
     _empId = 0
+
     # Private
     __name = ""
     __id = 0
     __phones = []
     __salary = 0.0
+
     # Public
     def __init__(self, empId, name, id, *phones) -> None:
         self._empId = empId
@@ -47,6 +48,7 @@ class Empolyee(ABC):
 class SalariedEmployee(Empolyee):
     # Private
     __monthlySalary = 0.0
+
     # Public
     def __init__(self, monthlySalay, empId, name, id, *phones) -> None:
         super().__init__(empId, name, id, *phones)
@@ -60,6 +62,7 @@ class HourlyEmployee(Empolyee):
     # Private
     __hours = {}  # to keep track of the hours the employee worked each day
     __perHour = 0.0
+
     # Public
     def __init__(self, perHour, empId, name, id, *phones) -> None:
         super().__init__(empId, name, id, *phones)
@@ -74,10 +77,11 @@ class HourlyEmployee(Empolyee):
     def addHours(self, date, hours):  # date in format dd-mm-yyyy
         if (
             re.search(
-                "^(0?[1-9]||3[01]||[12][0-9])-(0?[1-9]||1[0-2])-[0-9][0-9][0-9][0-9]$",
+                "^(0?[1-9]||3[01]||[12][0-9])-(0?[1-9]||\
+                1[0-2])-[0-9][0-9][0-9][0-9]$",
                 date,
             )
-            == None
+            is None
         ):
             return False
         self.__hours[date] = hours
