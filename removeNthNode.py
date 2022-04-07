@@ -1,6 +1,7 @@
 """
 19. Remove Nth Node From End of List
-Given the head of a linked list, remove the nth node from the end of the list and return its head.
+Given the head of a linked list,
+remove the nth node from the end of the list and return its head.
 
 example:
 Input: head = [1,2,3,4,5], n = 2
@@ -18,7 +19,7 @@ class Solution:
     def findSize(self, header):
         temp = header
         count = 0
-        while temp != None:
+        while temp is not None:
             count += 1
             temp = temp.next
         return count
@@ -28,13 +29,13 @@ class Solution:
         prev = header
         next = header.next
         i = 0
-        if next == None:
+        if next is None:
             header = None
             return header
         if size - n - 1 == -1:
             header = next
             return header
-        while next != None:
+        while next is not None:
             if i == size - n - 1:
                 print(prev.val)
                 print(next.val)

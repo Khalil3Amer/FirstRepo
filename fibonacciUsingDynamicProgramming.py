@@ -13,8 +13,13 @@ def fib(n):
     return dic[n]
 
 
-startTime = time_ns()
-for i in range(100000):
-    fib(i)
-endTime = time_ns()
-print("Running Time = ", (endTime - startTime) / 1000000000, "sec")
+def main():
+    startTime = time_ns()
+    for i in range(100000):
+        fib(i)
+    endTime = time_ns()
+    print("Running Time = ", (endTime - startTime) / 1000000000, "sec")
+
+
+if __name__ == "__main__":
+    main()

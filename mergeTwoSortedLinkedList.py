@@ -1,7 +1,8 @@
 """
 You are given the heads of two sorted linked lists list1 and list2.
 
-Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+Merge the two lists in a one sorted list.
+The list should be made by splicing together the nodes of the first two lists.
 
 Return the head of the merged linked list.
 """
@@ -15,9 +16,9 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1, list2):
-        if list1 == None:
+        if list1 is None:
             return list2
-        if list2 == None:
+        if list2 is None:
             return list1
         head = list2
         if list1.val < list2.val:
@@ -27,7 +28,7 @@ class Solution:
             list2 = list2.next
         current = ListNode(head.val)
         head = current
-        while list1 != None and list2 != None:
+        while list1 is not None and list2 is not None:
             if list1.val < list2.val:
                 current.next = ListNode(list1.val)
                 list1 = list1.next
@@ -35,7 +36,7 @@ class Solution:
                 current.next = ListNode(list2.val)
                 list2 = list2.next
             current = current.next
-        if list1 == None:
+        if list1 is None:
             current.next = list2
         else:
             current.next = list1
