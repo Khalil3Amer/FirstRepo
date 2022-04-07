@@ -14,7 +14,7 @@ class Student(Person):
         super().__init__(id, name, bd, email, address, department)
         self.__studentId = studentId
         self.__GPA = GPA
-        self.__courses = courses if courses != None else self.__courses
+        self.__courses = courses if courses is not None else self.__courses
 
     def getCustomId(self):
         return self.__studentId
@@ -43,5 +43,6 @@ class Student(Person):
     def __str__(self) -> str:
         return (
             super().__str__()
-            + f", StudentId = {self.__studentId}, GPA = {self.__GPA}, Courses = {self.__courses}"
+            + f", StudentId = {self.__studentId},\
+                 GPA = {self.__GPA}, Courses = {self.__courses}"
         )

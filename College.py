@@ -1,6 +1,6 @@
 from Department import Department
-from Student import Student
 from Instructor import Instructor
+from Student import Student
 
 
 def main():

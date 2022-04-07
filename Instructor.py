@@ -23,7 +23,16 @@ class Instructor(Staff):
         degree,
     ) -> None:
         super().__init__(
-            id, name, bd, email, address, department, empId, salary, postion, superVisor
+            id,
+            name,
+            bd,
+            email,
+            address,
+            department,
+            empId,
+            salary,
+            postion,
+            superVisor,
         )
         self.__major = major
         self.__degree = degree
@@ -44,4 +53,7 @@ class Instructor(Staff):
         self.__degree = degree
 
     def __str__(self) -> str:
-        return super().__str__() + f", Major = {self.__major}, Degree = {self.__degree}"
+        return (
+            super().__str__()
+            + f", Major = {self.__major}, Degree = {self.__degree}"
+        )
