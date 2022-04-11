@@ -14,7 +14,7 @@ with multiprocessing exampels.
 def creatFiles(baseDir, fileName):
     if not isdir(baseDir):
         mkdir(baseDir)
-    completePath = baseDir + "\\" + fileName
+    completePath = baseDir + "/" + fileName
     with open(completePath, "w") as file:
         for i in range(10000):
             for j in range(1000):
@@ -65,7 +65,7 @@ def test(func, msg, baseDir, file1Name, file2Name):
 
 def main():
 
-    baseDir = "C:\\Python_Multiprocessing_example"
+    baseDir = "./Data"
     file1Name = "f1.txt"
     file2Name = "f2.txt"
     test(
