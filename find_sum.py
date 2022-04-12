@@ -7,7 +7,9 @@ from os.path import exists
 
 def sum_of_file(path, result):
     if not exists(path):
-        raise ValueError("please run run_me_first.py or check inserted path")
+        # TODO: how to catch error form child process in Parent
+        # raise ValueError("please run run_me_first.py or check inserted path")
+        return 0
     nums = []
     with open(path) as file:
         for num in file:
@@ -28,18 +30,21 @@ def main():
     process2 = multiprocessing.Process(
         target=sum_of_file,
         args=(
-            "./Data/f2.txt",
+            "./Data/f3.txt",
             result2,
         ),
     )
-    process2.start()
     process1.start()
+    process2.start()
     process1.join()
     process2.join()
-    print(
-        "the sum of numbers inside the files =",
-        str(result1.value + result2.value),
-    )
+    if result1.value == 0 or result2.value == 0:
+        print("please run run_me_first.py or check inserted path")
+    else:
+        print(
+            "the sum of numbers inside the files =",
+            str(result1.value + result2.value),
+        )
 
 
 if __name__ == "__main__":
