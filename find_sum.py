@@ -30,7 +30,7 @@ def main():
     process2 = multiprocessing.Process(
         target=sum_of_file,
         args=(
-            "./Data/f3.txt",
+            "./Data/f2.txt",
             result2,
         ),
     )
