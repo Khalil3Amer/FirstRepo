@@ -8,13 +8,14 @@ if __name__ == "__main__":
     trad()
     end_time = time_ns()
     print(
-        "traditional way of multiprocessing : ",
+        "\033[92mtraditional way of multiprocessing : \033[0m",
         str((end_time - start_time) / 1000000000),
     )
+    print("\033[91m*************************************\033[0m")
     start_time = time_ns()
     exec()
     end_time = time_ns()
     print(
-        "executors pool way of multiprocessing : ",
+        "\033[92mexecutors pool way of multiprocessing : \033[0m",
         str((end_time - start_time) / 1000000000),
     )

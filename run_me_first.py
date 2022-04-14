@@ -60,7 +60,10 @@ def test(func, msg, baseDir, file1Name, file2Name):
     start_time = time_ns()
     func(baseDir, file1Name, file2Name)
     end_time = time_ns()
-    print(msg, str((end_time - start_time) / 1000000000))
+    print(
+        "\033[92m" + msg + "\033[0m",
+        "\033[94m" + str((end_time - start_time) / 1000000000) + "\033[0m",
+    )
 
 
 def main():
@@ -70,8 +73,7 @@ def main():
     file2Name = "f2.txt"
     test(
         without_multiprocessing,
-        "The total time required without\
-            multiprocessing or multithreading =",
+        "The total time required without multiprocessing or multithreading =",
         baseDir,
         file1Name,
         file2Name,

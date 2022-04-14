@@ -22,11 +22,16 @@ def main():
         result1 = executor.submit(sum_of_file, "./Data/f1.txt")
         result2 = executor.submit(sum_of_file, "./Data/f2.txt")
         if result1.result() == 0 or result2.result() == 0:
-            print("please run run_me_first.py or check inserted path")
+            print(
+                "\033[91mplease run run_me_first.py\
+                     or check inserted path\033[0m"
+            )
         else:
             print(
-                "the sum of numbers inside the files =",
-                str(result1.result() + result2.result()),
+                "\033[92mthe sum of numbers inside the files =\033[0m",
+                "\033[94m"
+                + str(result1.result() + result2.result())
+                + "\033[0m",
             )
 
 
