@@ -1,5 +1,43 @@
-{% extends "blog/base_template.html" %} {% block body %}
+{% extends "blog/index.html" %} {% block body %}
 <h1>Blog Home</h1>
-{% for d in data%}
-<h1>Welcome {{d.first_name}} {{d.last_name}}</h1>
-{% endfor%} {% endblock body %}
+<div class="container pb-5 mb-sm-1">
+  <div class="row">
+    {% for car in cars%}
+    <div class="col-md-4 col-sm-6">
+      <div class="card border-0 mb-grid-gutter">
+        <a class="card-img-tiles" href="shop-style1-ls.html">
+          <div class="main-img">
+            <img
+              src="https://media.autoexpress.co.uk/image/private/s--Y3oz27Vy--/f_auto,t_content-image-full-desktop@1/v1597407518/autoexpress/2020/08/New%20Audi%20A3%202020%20UK-7.jpg"
+              height="100%"
+              style="object-fit: cover"
+              alt="Clothing"
+            />
+          </div>
+          <div class="thumblist">
+            <img
+              src="https://via.placeholder.com/175x164/FF8C00/000000"
+              alt="Clothing"
+            /><img
+              src="https://via.placeholder.com/175x164/FF8C00/000000"
+              alt="Clothing"
+            />
+          </div>
+        </a>
+        <div class="card-body border mt-n1 py-4 text-center">
+          <h2 class="h5 mb-1">{{car.model}}</h2>
+          <span class="d-block mb-3 font-size-xs text-muted"
+            >Starting from
+            <span class="font-weight-semibold">${{car.price}}</span></span
+          ><a
+            class="btn btn-pill btn-outline-primary btn-sm"
+            href="shop-style1-ls.html"
+            >Buy</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+</div>
+{% endblock body %}
