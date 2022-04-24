@@ -114,7 +114,10 @@
 
     <!-- Page content-->
     <div class="container">
-      <div class="text-center mt-5">{%block body%}{% endblock body%}</div>
+      {% if messages %} {% for message in messages%}
+      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %} {% endif %}
+      <div class="mt-5">{%block body%}{% endblock body%}</div>
     </div>
 
     <script
