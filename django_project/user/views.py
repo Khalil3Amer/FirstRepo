@@ -1,11 +1,12 @@
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect, render
+
+from .forms import NewUserForm
 
 
 def register(req):
     if req.method == "POST":
-        form = UserCreationForm(req.POST)
+        form = NewUserForm(req.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get("username")
@@ -14,5 +15,5 @@ def register(req):
         else:
             messages.warning(req, "invalid inputs!")
     else:
-        form = UserCreationForm()
+        form = NewUserForm()
     return render(req, "user/register.html", {"form": form})
